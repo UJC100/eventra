@@ -13,7 +13,7 @@ const BookEvent = () => {
         }, 1000)
     }
   return (
-    <div id='book-event'>
+    <div id='book-even'>
         {
             submitted ? (
                 <p className="text-sm">Thank you for signing up for this event</p>
