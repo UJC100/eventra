@@ -53,6 +53,7 @@ const EventDetailsPage = async ({
   const bookings = 10;
 
   const similarEvents: IEvent[] = await getSimilarEventsBySlug(slug)
+
   return (
     <section id="event">
       <div className="header">
@@ -84,14 +85,14 @@ const EventDetailsPage = async ({
             <EventDetailItem icon={"/icons/audience.svg"} alt="audience" label={data.audience}/>
           </section>
 
-          <EventAgenda agendaItems={JSON.parse(data.agenda[0])}/>
+          <EventAgenda agendaItems={data.agenda}/>
 
         <section className="flex-col-gap-2">
           <h2>About the Organizer</h2>
           <p>{data.organizer}</p>
         </section>
 
-      <EventTags tags={JSON.parse(data.tags[0])}/>
+      <EventTags tags={data.tags}/>
 
         </div>
 
@@ -116,7 +117,7 @@ const EventDetailsPage = async ({
             <div className="events">
             {
               similarEvents.length > 0 && similarEvents.map((similarEvents: IEvent) => (
-                <EventCard key={similarEvents.id} {...similarEvents}/>
+                <EventCard key={similarEvents.title} {...similarEvents}/>
               ))
             }
             </div>
