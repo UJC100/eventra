@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
         }, {status: 201})
     } catch (e) {
         console.error(e)
-        return NextResponse.json({message: `Event Creation failed`, error: e instanceof Error ? e.message: "Unknown"}, {status: 500})
+        return NextResponse.json({message: `Event Creation failed. Try again`, error: e instanceof Error ? e.message: "Unknown"}, {status: 500})
     }
 }
 
