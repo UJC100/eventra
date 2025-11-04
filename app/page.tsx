@@ -11,6 +11,7 @@ const page = async () => {
   cacheLife('hours')
   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events`);
 const {events} = await response.json()
+console.log(events)
 
   return (
     <section className="pt-10">
