@@ -24,7 +24,7 @@ const Page = async () => {
   const baseUrl = getBaseUrl();
 
   // ✅ Always use a valid absolute URL at build time
-  const response = await fetch(`${baseUrl}/api/events`, { cache: "no-store" });
+  const response = await fetch(`https://eventra-red.vercel.app/api/events`, { cache: "no-store" });
 
   if (!response.ok) {
     console.error("Failed to fetch events:", response.statusText);
